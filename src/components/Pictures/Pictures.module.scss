@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  .picture {
+    cursor: pointer;
+    width: 210px;
+    height: 120px;
+    margin: 10px;
+  }
+
+
+}
