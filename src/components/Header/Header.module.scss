@@ -1,13 +1,64 @@
-.header{
-  height: 100px;
+.header {
+  max-width: 1600px;
+  padding-bottom: 40px;
+  padding-top: 10px;
   width: 100%;
-  border-bottom: 1px solid #c0c0c0;
-  margin-bottom: 150px;
-  h1{
-    text-align: center;
-    padding: 40px;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: sans-serif;
+  height: 100%;
+
+  h1 {
+    position: absolute;
+    left: 50px;
+  }
+
+  .navDesk {
+    display: flex;
+    position: absolute;
+    right: 50px;
+
+    .navMob {
+      padding-left: 6px;
+
+      &:hover {
+        color: chocolate;
+        cursor: pointer;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  .wrapper {
+    background-color: #222222;
+    margin-top: 50px;
+    display: block;
+
+    ul {
+      li {
+        color: wheat;
+        padding: 5px;
+        text-align: center;
+        display: block;
+        &:hover{
+          color: chocolate;
+          cursor: pointer;
+
+        }
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    right: 50px;
+    @media screen and (max-width: 600px) {
+      display: block;
+      cursor: pointer;
+      &:hover {
+        color: chocolate;
+      }
+    }
   }
 }

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
-import {Route} from 'react-router-dom'
 import {Header, Pictures} from "./components";
 import './App.scss';
+
 
 function App() {
 
@@ -19,6 +19,7 @@ function App() {
         <div>
             <Header/>
             <Pictures items={pictures}/>
+
         </div>
     );
 }
