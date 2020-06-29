@@ -1,20 +1,24 @@
 import React from 'react';
-import styles from './Pictures.module.scss'
+import './Picture.scss'
 
 const Pictures = ({items}) => {
     console.log(items)
     return (
-        <div className={styles.container}>
+        <div>
             {
                 items.map(item => (
-                    <img
-                        className={styles.picture}
-                        key={item.id}
-                        src={item.img} alt=""/>
+                    <div className="image__wrapper">
+                        <img
+                            className="minimized"
+                            key={item.id}
+                            src={item.img} alt=""/>
+                    </div>
+
                 ))
             }
         </div>
     );
 };
+
 
 export default Pictures;

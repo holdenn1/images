@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import {Header, Pictures} from "./components";
 import './App.scss';
+import Test from "./components/Pictures/Test";
 
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
     return (
         <div>
             <Header/>
-            <Pictures items={pictures}/>
-
+           {/* <Pictures items={pictures}/>*/}
+            <Test/>
         </div>
     );
 }
