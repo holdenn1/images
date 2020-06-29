@@ -2,20 +2,17 @@ import React, {Component} from 'react';
 import './Picture.scss'
 import Popup from "./Popup";
 
+
 class Test extends Component {
     constructor(props) {
         super(props);
         this.state = {
             imageUrl: '',
-            imageUrlArray: [
-                "https://images.wallpaperscraft.ru/image/pirs_prichal_more_sumerki_bereg_118549_1920x1080.jpg",
-                "https://images.wallpaperscraft.ru/image/abstraktsiya_forma_ostrie_figurka_101902_1920x1080.jpg",
-                "https://images.wallpaperscraft.ru/image/skaly_poberezhe_more_174985_1920x1080.jpg"
-
-            ],
+            imageUrlArray: [],
             showModal: false,
             popImageUrl: ''
         }
+
     }
 
     imageSubmitter = (e) => {
@@ -37,20 +34,22 @@ class Test extends Component {
     handlePopup = (url) => {
         this.setState({
             showModal: !this.state.showModal,
-            popImageUrl: url
+            popImageUrl: url.img
         })
     }
 
     render() {
 
         let imageUrlArray = this.state.imageUrlArray
+        let items = this.props.items
+        console.log(items)
 
-        const images = imageUrlArray.map((url, index) => {
+        const images = items.map((url, index) => {
             return (
                 <img
                     className='singleImage'
-                    src={url}
-                    key={index}
+                    src={url.img}
+                    key={url.id}
                     onClick={() => this.handlePopup(url)}
                     alt=""/>
             )
@@ -78,5 +77,6 @@ class Test extends Component {
         )
     }
 }
+
 
 export default Test;

@@ -19,8 +19,8 @@ function App() {
     return (
         <div>
             <Header/>
-           {/* <Pictures items={pictures}/>*/}
-            <Test/>
+            {/*<Pictures items={pictures}/>*/}
+            <Test items={pictures}/>
         </div>
     );
 }
