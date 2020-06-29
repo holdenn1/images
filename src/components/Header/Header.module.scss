@@ -1,65 +1,23 @@
-.header {
-  max-width: 1600px;
-  padding-top: 10px;
-  width: 100%;
-  height: 100%;
+.wrapper {
+  background-color: #2e40a1;
+  opacity: 0.8;
+  z-index: 0;
+  ul {
+    list-style: none;
+    font-family: Roboto;
+    font-size: 14pt;
 
+    justify-content: center;
+    text-align: center;
 
-  h1 {
-    position: absolute;
-    left: 50px;
-  }
-
-  .navDesk {
-    display: flex;
-    position: absolute;
-    right: 50px;
-
-    .navMob {
-      padding-left: 6px;
+    li {
+      color: white;
+      padding: 14px;
 
       &:hover {
-        color: chocolate;
         cursor: pointer;
-      }
-    }
-
-    @media screen and (max-width: 550px) {
-      display: none;
-    }
-  }
-
-  .wrapper {
-    background-color: #222222;
-    margin-top: 50px;
-    @media screen and (min-width: 550px){
-      display: none;
-    }
-
-    ul {
-      li {
-        color: wheat;
-        padding: 5px;
-        text-align: center;
-        display: block;
-        &:hover{
-          color: chocolate;
-          cursor: pointer;
-
-        }
-      }
-    }
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    right: 50px;
-    @media screen and (max-width: 550px) {
-      display: block;
-      cursor: pointer;
-      &:hover {
-        color: chocolate;
+        background: silver;
+        color: black;
       }
     }
   }
