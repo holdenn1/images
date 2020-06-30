@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {mdiClose} from '@mdi/js';
+import Icon from '@mdi/react'
 import './Picture.scss'
 
 class Popup extends Component {
@@ -6,11 +8,14 @@ class Popup extends Component {
         return (
             <div className='popupParent'>
                 <div className='popupImage'>
-                    <button
-                        className='imageClosingButton'
-                        onClick={this.props.closePopup}
-                    >X</button>
-                    <img src={this.props.popImageUrl} style={{width: 500, height:350}} alt=""/>
+                    <Icon path={mdiClose}
+                          className='imageClosingButton'
+                          onClick={this.props.closePopup}/>
+                    <div className='wrapper'>
+                        <img
+                            className='popImg'
+                            src={this.props.popImageUrl} alt=""/>
+                    </div>
                 </div>
             </div>
         );

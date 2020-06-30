@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
-import { Pictures} from "./components";
-import Header from './components/Header/Header'
+import {Header, Pictures} from "./components";
 import './App.scss';
 
 function App() {
@@ -18,8 +17,8 @@ function App() {
     return (
         <div>
             <Header/>
-            <Pictures items={pictures}/>
-            {/*<Pictures />*/}
+            <Pictures/>
+
         </div>
     );
 }

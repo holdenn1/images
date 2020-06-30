@@ -1,30 +1,51 @@
 import React, {useState} from 'react';
-
-import styles from './Header.module.scss'
+import {makeStyles} from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import Menu from "./Menu";
+import './Header.module.scss'
+import styles from "./Header.module.scss";
 
-const Header = () => {
 
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+        position: "fixed",
+        width: '100%',
+        zIndex: 9999
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    title: {
+        flexGrow: 1,
+    },
+}));
+
+export default function ButtonAppBar() {
+    const classes = useStyles();
     const [visible, setVisible] = useState(false)
 
+
     return (
-        <div className={styles.header}>
-            <h1>Logo</h1>
-            <ul className={styles.navDesk}>
-                <li className={styles.navMob}>Home</li>
-                <li className={styles.navMob}>About Us</li>
-                <li className={styles.navMob}>Works</li>
-                <li className={styles.navMob}>Contact</li>
-                <li className={styles.navMob}>Help</li>
-            </ul>
-            <span className={styles.menu} onClick={() => setVisible(!visible)}>Menu</span>
-            {visible &&
-            <Menu/>
-
-
-            }
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <MenuIcon  className={styles.menu} onClick={() => setVisible(!visible)}/>
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                        Pictures
+                    </Typography>
+                    <Button color="inherit">Login</Button>
+                </Toolbar>
+            </AppBar>
+            {visible && <Menu/>}
         </div>
     );
-};
-
-export default Header;
+}
